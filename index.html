@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទម្រង់បែបបទព័ត៌មាន</title>
+    
+    <style>
+        body {
+            font-family:khmer ;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            padding: 10px;
+        }
+
+        /* រចនាប្រអប់ fieldset នីមួយៗ */
+        fieldset {
+            border: 2px solid #1a237e; /* ពណ៌ខៀវក្រម៉ៅ */
+            border-radius: 4px;
+            margin-bottom: 25px;
+            padding: 15px 20px 20px 20px;
+        }
+
+        /* រចនាចំណងជើង fieldset */
+        legend {
+            font-family: khmer;
+            font-weight: bold;
+            color: #0d47a1;
+            font-size: 16px;
+            padding: 0 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* រចនាប្រអប់បញ្ចូលទិន្នន័យ (Inputs & Selects) */
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #767676;
+            border-radius: 2px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: 'Kantumruy Pro', sans-serif;
+            outline: none;
+        }
+
+        /* ពណ៌សម្រាប់ Placeholder text */
+        ::placeholder {
+            color: #a9a9a9;
+            opacity: 1;
+        }
+
+        /* ជម្រើសរើសភេទ (Radio) និងជំនាញ (Checkbox) */
+        .radio-group, .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .radio-item, .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        /* រចនាប៊ូតុងខាងក្រោម */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 2px;
+            color: white;
+            font-size: 14px;
+            font-family: khmer;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-submit:hover {
+            background-color: #006644; /* ងងឹតបន្តិចពេលដាក់ mouse លើ */
+        }
+
+        .btn-clear:hover {
+            background-color: #990000;
+        }
+
+        /* ប្រសិទ្ធភាពពេលចុចលើប៊ូតុង (Click Effect) */
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <form>
+        
+        <fieldset>
+            <legend>១. ព័ត៌មានផ្ទាល់ខ្លួន</legend>
+            
+            <div>
+                <label for="fullname">ឈ្មោះពេញ:</label>
+                <input type="text" id="fullname" placeholder="បញ្ចូលឈ្មោះ">
+                </div>
+            
+            <div>
+                <label for="dob">ថ្ងៃខែឆ្នាំកំណើត:</label>
+                <input type="date" id="dob">
+            </div>
+            
+            <div>
+                <label>ភេទ:</label>
+                <div>
+                    <label>
+                        <input type="radio" name="gender" value="male" checked> ប្រុស
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"> ស្រី
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <label for="pob">ខេត្ត/រាជធានីកំណើត:</label>
+                <select id="pob">
+                    <option value="">--- ជ្រើសរើសខេត្ត/រាជធានី ---</option>
+                    <option value="phnom-penh">ភ្នំពេញ</option>
+                    <option value="kandal">កណ្តាល</option>
+                    <option value="siem-reap">សៀមរាប</option>
+                    <option value="battambang">បាត់ដំបង</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>២. ព័ត៌មានការសិក្សា</legend>
+            
+            <div>
+                <label for="year">ឆ្នាំសិក្សា:</label>
+                <select id="year">
+                    <option value="1">ឆ្នាំទី ១</option>
+                    <option value="2">ឆ្នាំទី ២</option>
+                    <option value="3">ឆ្នាំទី ៣</option>
+                    <option value="4">ឆ្នាំទី ៤</option>
+                </select>
+            </div>
+            
+            <div>
+                <label>ជំនាញដែលចូលចិត្ត:</label>
+                <div>
+                    <label>
+                        <input type="checkbox" value="web-dev"> Web Dev
+                    </label>
+                    <label>
+                        <input type="checkbox" value="ui-ux"> UI/UX Design
+                    </label>
+                    <label>
+                        <input type="checkbox" value="networking"> Networking
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>៣. គណនីសុវត្ថិភាព</legend>
+            
+            <div>
+                <label for="email">អ៊ីមែល:</label>
+                <input type="email" id="email" placeholder="example@email.com">
+            </div>
+            
+            <div>
+                <label for="password">លេខកូដសម្ងាត់:</label>
+                <input type="password" id="password" placeholder="បញ្ចូលលេខកូដ">
+            </div>
+        </fieldset>
+
+        <div>
+            <button style="background-color: chartreuse;" type="submit">រក្សាទុក (Submit)</button>
+            <button style="background-color: #fc3737;" type="reset">សម្អាត (Clear)</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
